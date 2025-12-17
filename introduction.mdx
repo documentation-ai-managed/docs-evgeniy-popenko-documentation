@@ -1,0 +1,120 @@
+---
+title: Welcome to Evgeniy Popenko Documentation
+description: An overview of Evgeniy Popenko's documentation space, designed for organizing and managing project documentation efficiently.
+---
+
+## Overview
+
+Welcome to Evgeniy Popenko's documentation space. You use this platform to organize, manage, and share all your project documentation in one centralized location. It supports MDX for rich, interactive content including code examples, diagrams, and components that make your docs engaging and easy to navigate.
+
+This space helps you create structured guides, API references, and changelogs while maintaining consistency with brand guidelines. Start by exploring key benefits and follow the steps to contribute your first page.
+
+## Key Benefits
+
+Discover how this documentation space streamlines your workflow.
+
+<Columns cols={3}>
+  <Card title="Centralized Organization" icon="folder" href="#">
+    Keep all project docs in one place. Use folders, tags, and search to find content quickly.
+  </Card>
+  <Card title="Rich MDX Components" icon="code" href="#">
+    Embed interactive elements like tabs, steps, and code groups directly in your pages.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#">
+    Track changes with Git integration. Collaborate seamlessly with your team.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Customize your sidebar navigation to match project structure for faster access.
+</Callout>
+
+## Get Started
+
+Follow these steps to create and publish your first documentation page.
+
+<Steps>
+  <Step title="Create a New Page" icon="file-plus">
+    Navigate to the content folder and add a new `{filename}.mdx` file. Start with YAML frontmatter for title and description.
+  </Step>
+  <Step title="Add Content" icon="edit-3">
+    Use H2 headings and MDX components. Include code examples with realistic data.
+  </Step>
+  <Step title="Preview and Commit" icon="eye">
+    Preview locally, then commit changes. Deploy automatically via GitHub Actions.
+  </Step>
+</Steps>
+
+```javascript
+// Example: Basic page structure
+const frontmatter = {
+  title: "My Page",
+  description: "Page overview"
+};
+```
+
+## Brand Guidelines
+
+Maintain consistency across all documentation. Use the primary brand color `{#3B82F6}` for accents.
+
+<Tabs>
+  <Tab title="Web/CSS" icon="globe">
+    Apply the brand color in your styles.
+
+    ```css
+    :root {
+      --brand-color: #3B82F6;
+    }
+
+    .header {
+      background-color: var(--brand-color);
+      color: white;
+    }
+    ```
+  </Tab>
+  <Tab title="Icons and Typography" icon="type">
+    Pair with clean sans-serif fonts like Inter or system defaults.
+
+    - Headings: Bold, `{font-size: 1.5rem+}`
+    - Body: `{line-height: 1.6}`
+    - Icons: Lucide library, monochrome except accents
+  </Tab>
+  <Tab title="Dark Mode" icon="moon">
+    Ensure readability in dark themes.
+
+    ```css
+    @media (prefers-color-scheme: dark) {
+      --brand-color: #60A5FA;
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## Frequently Asked Questions
+
+<ExpandableGroup>
+  <Expandable title="How do I add custom components?" default-open="true">
+    Extend the MDX setup by importing components in your theme configuration. Place JSX in your pages following syntax rules.
+  </Expandable>
+  <Expandable title="What about SEO?">
+    Frontmatter titles and descriptions optimize for search. Add meta images via theme config.
+  </Expandable>
+</ExpandableGroup>
+
+<CodeGroup tabs="JavaScript,Python">
+```javascript
+// Embed a simple chart
+const data = [
+  { name: "Users", value: 1200 },
+  { name: "Projects", value: 45 }
+];
+```
+```python
+# Process documentation data
+docs = {
+    "pages": 50,
+    "components": ["Cards", "Tabs", "Steps"]
+}
+print(f"Total pages: {docs['pages']}")
+```
+</CodeGroup>

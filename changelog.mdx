@@ -1,0 +1,132 @@
+---
+title: Changelog
+description: History of updates and improvements to the documentation platform.
+---
+
+## Overview
+
+You track all updates to the Evgeniy Popenko Documentation platform in this changelog. Review recent releases to see new features, improvements, and bug fixes that enhance your documentation experience. Each entry details changes by category, helping you understand platform evolution.
+
+<Callout kind="info">
+  Bookmark this page and check back regularly for the latest enhancements to your documentation workflow.
+</Callout>
+
+## Recent Releases
+
+Review the most recent versions below. You access detailed release notes, migration guides, and contribution instructions within each section.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added support for custom brand colors, like `#3B82F6` for your projects
+- Introduced real-time collaboration previews in the editor
+
+## Improvements
+
+- Enhanced MDX parsing speed by 40% for larger documentation sites
+- Optimized image loading with automatic lazy-loading
+
+## Bug Fixes
+
+- Fixed nested code block rendering issues in JSX components
+- Resolved frontmatter parsing errors with blank lines
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Integrated Lucide icon library with 200+ searchable icons
+- Added `<Video>` and `<Iframe>` components for rich media embeds
+
+## Improvements
+
+- Improved accessibility with required `alt` and `title` attributes
+- Streamlined component syntax rules in the documentation
+
+## Bug Fixes
+
+- Corrected `<ParamField>` location attribute validation (one only)
+- Patched Mermaid diagram code block rendering (no JSX component)
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Removed legacy `<Mermaid>` JSX component; use code blocks only
+
+## New Features
+
+- Launched core MDX components: `<Steps>`, `<Tabs>`, `<Update>`, `<Columns>`
+- Enabled YAML frontmatter validation without blank lines
+
+## Improvements
+
+- Added parsing error prevention checklist for writers
+- Introduced 5-8 component diversity requirement per page
+
+</Update>
+
+## Stay Updated
+
+Follow these steps to ensure you never miss an update.
+
+<Steps>
+  <Step title="Subscribe to Notifications" icon="bell">
+    Enable email alerts for new releases via your account settings.
+  </Step>
+  <Step title="Watch GitHub Repo" icon="github">
+    Visit the repository and click "Watch" to get release notifications.
+  </Step>
+  <Step title="Check This Page" icon="refresh-cw">
+    Return here monthly for the full changelog history.
+  </Step>
+</Steps>
+
+## Example Update Format
+
+Use this structure when contributing changelog entries.
+
+<CodeGroup tabs="MDX,JSON">
+  ```mdx
+  <Update label="YYYY-MM-DD" description="vX.Y.Z" tags={["feature"]}>
+    ## New Features
+    - Your change here
+  </Update>
+  ```
+  ```json
+  {
+    "label": "YYYY-MM-DD",
+    "description": "vX.Y.Z",
+    "tags": ["feature", "bugfix"]
+  }
+  ```
+</CodeGroup>
+
+## Quick Links
+
+<Columns cols={2}>
+  <Card title="Contribute Changes" icon="edit-3" href="/docs/contributing">
+    Submit pull requests with new updates.
+  </Card>
+  <Card title="Full History" icon="archive" href="/docs/releases">
+    Browse all past versions and downloads.
+  </Card>
+</Columns>
+
+<Expandable title="Migration Guide (v1.0 to v1.2)" default-open="false">
+  Update your MDX files to use code blocks for Mermaid diagrams:
+
+  ```mermaid
+  graph TD
+      A[User] --> B[Platform]
+      B --> C[Docs]
+      C --> A
+  ```
+
+  Avoid `<Mermaid>` tags entirely.
+</Expandable>

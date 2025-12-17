@@ -1,0 +1,126 @@
+---
+title: Organizing and Managing Project Documentation
+description: Learn how to structure, edit, and maintain documentation within your personal space.
+---
+
+## Overview
+
+Organize your Evgeniy Popenko Documentation space efficiently to keep all project information accessible and up-to-date. Structure content into pages and sections, integrate version control for tracking changes, and leverage collaboration tools to work with teams. Follow these steps to build a scalable documentation system.
+
+<Columns cols={3}>
+  <Card title="Create Pages" icon="file-plus" href="#">
+    Build new documentation pages quickly.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#">
+    Track changes with Git integration.
+  </Card>
+  <Card title="Collaborate" icon="users" href="#">
+    Share and review docs with others.
+  </Card>
+</Columns>
+
+## Creating Pages and Sections
+
+Start by creating a clear hierarchy. Use folders for sections like `guides/`, `api/`, and `changelog/`. Add new pages via the dashboard or CLI.
+
+<Steps>
+  <Step title="Create a New Page" icon="file-plus">
+    Navigate to your documentation root.
+
+    Click **New Page** and enter a filename like `quickstart.mdx`.
+
+    Add YAML frontmatter immediately:
+
+    ```yaml
+    ---
+    title: Quickstart Guide
+    description: Get started in minutes.
+    ---
+    ```
+  </Step>
+  <Step title="Organize into Sections" icon="folder">
+    Create a folder for related content:
+
+    ```bash
+    mkdir docs/guides
+    touch docs/guides/installation.mdx
+    ```
+
+    Link sections in your navigation sidebar.
+  </Step>
+  <Step title="Preview Changes" icon="eye">
+    Use live preview to check rendering before committing.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Name pages descriptively, like `api-endpoints.mdx`, and use consistent frontmatter for SEO.
+</Callout>
+
+## Version Control Basics
+
+Integrate Git to track edits and revert changes. Connect your repository to the documentation space for automatic deploys.
+
+<Tabs>
+  <Tab title="Initialize Repo" icon="git-branch">
+    Set up Git in your docs folder:
+
+    ```bash
+    git init
+    git add .
+    git commit -m "Initial documentation commit"
+    git remote add origin https://github.com/yourusername/evgeniy-docs.git
+    git push -u origin main
+    ```
+  </Tab>
+  <Tab title="Make Changes" icon="edit-3">
+    Edit files and commit:
+
+    ```bash
+    git add docs/managing-docs.mdx
+    git commit -m "Update managing docs guide"
+    git push
+    ```
+  </Tab>
+  <Tab title="Branch for Features" icon="git-pull-request">
+    Work on branches safely:
+
+    ```bash
+    git checkout -b feature/new-section
+    # Make changes
+    git push origin feature/new-section
+    ```
+  </Tab>
+</Tabs>
+
+## Collaboration Features
+
+Invite team members and enable reviews. Use pull requests for changes and comments for feedback.
+
+<ExpandableGroup>
+  <Expandable title="Invite Collaborators" default-open="true">
+    Go to **Settings > Collaborators**.
+
+    Add GitHub usernames or emails.
+
+    Set permissions: read, write, or admin.
+  </Expandable>
+  <Expandable title="Review Pull Requests">
+    Enable PR previews for docs changes.
+
+    Comment inline on MDX files.
+
+    Merge after approval to trigger deploys.
+  </Expandable>
+  <Expandable title="Advanced: Webhooks">
+    Set up webhooks for Slack notifications on commits.
+
+    Use `{WEBHOOK_URL}` from your integration settings.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="info">
+  Regularly prune old branches and archive outdated sections to keep your space clean.
+</Callout>
+
+Follow these practices to maintain high-quality, collaborative documentation that scales with your projects.
